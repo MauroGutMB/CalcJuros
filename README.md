@@ -1,17 +1,25 @@
 # calcjuros
 
-A new Flutter project.
+Calculadora de juros compostos em Flutter.
 
-## Getting Started
+## Fórmula
 
-This project is a starting point for a Flutter application.
+Montante com aporte periódico:
 
-A few resources to get you started if this is your first Flutter project:
+```
+M = C · (1 + i)^n + A · ((1 + i)^n − 1) / i
+```
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+- `C`: capital inicial
+- `A`: aporte por período (opcional)
+- `i`: taxa por período (em decimal)
+- `n`: número de períodos
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Com `i = 0`, o montante é `C + A · n`.
+
+## Uso
+
+```
+flutter pub get
+flutter run
+```

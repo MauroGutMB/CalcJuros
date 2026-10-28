@@ -1,36 +1,26 @@
 import 'package:flutter/material.dart';
+
+import 'historico_store.dart';
 import 'paginas/inicio.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await HistoricoStore.instance.carregar();
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-  
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'CalcJuros',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: .fromSeed(seedColor: Colors.deepPurple),
-      ),  
-      home: const Inicio(),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+      ),
+      home: const PaginaInicio(),
     );
   }
 }
-
-class Inicio extends StatelessWidget {
-  const Inicio({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: PaginaInicio(),
-    );
-  }
-
-}
-
